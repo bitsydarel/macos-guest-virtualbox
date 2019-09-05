@@ -504,6 +504,8 @@ VBoxManage modifyvm "${vmname}" --cpus "${cpucount}" --memory "${memorysize}" \
  --boot4 none --firmware efi --rtcuseutc on --usbxhci on --chipset ich9 \
  --mouse usbtablet --keyboard usb --audiocontroller hda --audiocodec stac9221
 
+VBoxManage modifyvm "${vmname}" --natpf1 "sandboxssh,tcp,,2222,,22"
+
 VBoxManage setextradata "${vmname}" \
  "VBoxInternal/Devices/efi/0/Config/DmiSystemFamily" "${DmiSystemFamily}"
 VBoxManage setextradata "${vmname}" \
